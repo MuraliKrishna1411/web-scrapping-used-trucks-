@@ -47,7 +47,7 @@ from selenium.webdriver.common.by import By
 
 s='document.querySelector("body > div:nth-child(15) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > h4:nth-child(1) > a:nth-child(1)").baseURI'
 s1=dr.execute_script('return'+' '+s)                   
-raw= s1                                                                 # gettomg url using random buttuon 
+raw= s1                                                                    # getting url using random buttuon 
 page = requests.get(s1)
 print(page)
 
@@ -77,7 +77,7 @@ for i in k:
     t = dr.find_element_by_xpath("//h3[contains(text(),'Price')]")
     raw1=t.text
     raw2.append(raw)
-    Price.append(raw1)                    # data is extracted in raw format
+    Price.append(raw1)                                             # data is extracted in raw format
 
 time.sleep(2)
 
@@ -85,8 +85,7 @@ n=[]
 for i in raw2:
     if 1>0:
         x=i.split('\n')
-        n.append(x)                                       # splitting and appending
-
+        n.append(x)                                                        # splitting and appending
 time.sleep(1)
 Model = []
 Fuel = []
@@ -102,7 +101,7 @@ time.sleep(1)
 for i in range(len(n)):
         for j,h in zip(mfo,mf):
             try:
-                x=n[i]                                                         # using 2 variable in single loop to complete all the data insertion into columns
+                x=n[i]                                                   # using 2 variable in single loop to complete all the data insertion into columns
                 j.append(x[(x.index(h)+1)])                                   
             except:
                 j.append('nan')
